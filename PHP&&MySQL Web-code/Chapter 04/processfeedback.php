@@ -6,7 +6,7 @@ $email=$_POST['email'];
 $feedback=$_POST['feedback'];
 
 //set up some static information
-$toaddress = "feedback@example.com";
+$toaddress = "610047449@qq.com";
 
 $subject = "Feedback from web site";
 
