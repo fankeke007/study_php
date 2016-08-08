@@ -26,3 +26,39 @@ insert into order_items values
 
 insert into book_reviews values
   ("0-672-31697-8", "Morgan's book is clearly written and goes well beyond most of the basic Java books out there.");
+
+
+select customers.name 
+from customers,orders,order_items,books
+where customers.customerid=orders.customerid
+and orders.orderid = order_items.orderid
+and order_items.isbn=books.isbn
+and books.title like '%java%';
+
+select customers.customerid,customers.name,orders.orderid
+from customers left join orders
+on customers.customerid = orders.customerid;
+
+select customers.customerid,customers.name
+from customers left join orders
+using(customerid)
+where orders.orderid is null;
+
+select name,address
+from customers
+order by name;
+
+select customerid,avg(amount)
+from orders
+group by customerid;
+
+delete from customers
+  where customerid=1;
+
+update customers
+  set address='250 Olsens Road'
+  where customerid=2;
+
+
+
+
