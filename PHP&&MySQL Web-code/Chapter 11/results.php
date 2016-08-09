@@ -19,7 +19,7 @@
     $searchterm = addslashes($searchterm);
   }
 
-  @ $db = new mysqli('localhost', 'bookorama', 'bookorama123', 'books');
+  @ $db = new mysqli('localhost', 'root', '', 'books');
 
   if (mysqli_connect_errno()) {
      echo 'Error: Could not connect to database.  Please try again later.';
